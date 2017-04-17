@@ -1,0 +1,22 @@
+<h1>Adicionar Notícas</h1>
+
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="titulo" class="col-sm-2 control-label">Título</label>
+    <div class="col-sm-4">
+      <input class="form-control" id="titulo" ng-model="noticia.titulo" placeholder="Título da notícia..."/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="descricao" class="col-sm-2 control-label">Descrição da Notícia:</label>
+    <div class="col-sm-4">
+      <textarea class="form-control" id="descricao" ng-model="noticia.descricao" placeholder="Descrição da Notícia..."></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <a ng-click="adicionarNoticia()" class="btn btn-small btn-primary">Adicionar</a>
+    </div>
+  </div>
+</form>

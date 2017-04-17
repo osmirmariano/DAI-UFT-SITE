@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Diretoria de Assuntos Internacionais</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/starter-template.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.4.4/angular-route.min.js"></script>
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+		<!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+	<body ng-app="myApp">
+		<div class="topBar">
+			<br/>
+			<img class="imgTopBar" src="img/logoBlackWhite.png">
+			<h1 class="nomeTexto">Diretoria de Assuntos Internacionais</h1>
+			<br/>
+		</div>
+
+        <!-- Container -->
+        <div class="container starter-template">
+        <div ng-view></div>
+        </div>
+                
+        <!-- Module -->
+        <script src="js/app.js"></script>
+
+        <!-- Controllers -->
+        <script src="js/controllers/listarController.js"></script>	
+        <script src="js/controllers/adicionarController.js"></script> 	
+        <script src="js/controllers/editarController.js"></script> 
+				
+	</body>
+</html>
