@@ -6,7 +6,7 @@ app.controller('editarController', ['$scope','$location', '$routeParams', '$fire
     
     $scope.editarNoticia = function() {
         $scope.noticia.$save({
-            sku: $scope.noticia.titulo,
+            titulo: $scope.noticia.titulo,
             descricao: $scope.noticia.descricao
         });
         $scope.edit_form.$setPristine();

@@ -4,7 +4,7 @@ app.controller('adicionarController', ['$scope', '$firebaseArray', '$location', 
 		var ref = new Firebase(FBURL);
 		var noticia = $firebaseArray(ref);
 		noticia.$add({
-			sku: $scope.noticia.titulo,
+			titulo: $scope.noticia.titulo,
 			descricao: $scope.noticia.descricao
 		});
 		$location.path('/');
