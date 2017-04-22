@@ -1,0 +1,23 @@
+<table class="table" >
+  <caption class="lead">Notícias</caption>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Resumo</th>
+      <th>Descrição</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="noticia in noticias">
+      <td>{{noticia.titulo}}</td>
+      <td>{{noticia.resumo}}</td>
+      <td>{{noticia.descricao}}</td>
+	  <td><a href="#/editar/{{noticia.$id}}" class="btn btn-small btn-primary">Editar</a> <a class="btn btn-small btn-danger" ng-click="removeNoticias(noticia.$id)">Apagar</a></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+    <a href="#/adicionar" class="btn btn-success" role="button">Adicionar Notícia</a>
+</p>
+

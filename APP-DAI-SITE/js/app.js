@@ -1,39 +1,36 @@
-export class Formulario{
-    keyReference;
-    titulo;
-    descricao;
-    imagem;
+var app = angular.module('myApp', ['ngRoute', 'firebase']);
 
-    constructor(){
-        this.titulo = titulo;
-        this.descricao = descricao
-        this.imagem = imagem;
-    }
-}
 
-(function() {
-    //Inicializando Firebase
-    const firebaseConfig = {
-        apiKey: "AIzaSyCT5QhqGe8tXBhcCwXE27VUoWyngERdJYM",
-        authDomain: "appdai-beta.firebaseapp.com",
-        databaseURL: "https://appdai-beta.firebaseio.com",
-        storageBucket: "appdai-beta.appspot.com",
-        messagingSenderId: "562100545330",
-    };
-    firebase.initializeApp(firebaseConfig);
+app.config(function($routeProvider){
+  $routeProvider
+  	.when('/', {
+		controller: 'listarController',
+		templateUrl: 'views/listar.html'
+	})
+  	.when('/login', {
+  		controller: 'loginController',
+  		templateUrl: 'views/login.html'
+  	})
+	.when('/adicionar', {
+		controller: 'adicionarController',
+		templateUrl: 'views/adicionar.html'
+	})
+	.when('/editar/:id', {
+		controller: 'editarController',
+		templateUrl: 'views/editar.html'
+	
+	})
+	.otherwise({
+		redirectTo: '/'
+	});
+});
 
-    
-}());
+app.constant("FBURL", "https://appdai-beta.firebaseio.com/");
 
-// function Checkfiles(){
-//     var fup = document.getElementById('filename');
-//     var fileName = fup.value;
-//     var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+app.factory("Auth", ["$firebaseAuth",
+  function($firebaseAuth) {
+    var ref = new Firebase("https://appdai-beta.firebaseio.com/");
+    return $firebaseAuth(ref);
+  }
+]);
 
-//     if(ext =="jpeg" || ext=="png"){
-//         return true;
-//     }
-//     else{
-//         return false;
-//     }
-// }
